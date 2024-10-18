@@ -7,10 +7,10 @@ import { RiArrowDropDownLine, RiNotionFill } from "react-icons/ri";
 
 const Footer = () => {
   return (
-    <section className="he-container relative flex flex-col justify-center items-center w-full h-fit text-neutral-900 px-[80px] py-[90px]">
+    <section className="wr-container flex justify-center items-center w-full h-fit text-neutral-900 px-[80px] py-[110px]">
       <div className="h-[1px] w-[98%] bg-neutral-900/20 mt-4 absolute top-0"></div>
       <div className="fo-wrapper-content flex justify-between w-[1280px]">
-        <div className="flex flex-col items-center gap-12">
+        <div className="flex flex-col items-center gap-12 w-fit">
           <div className="flex flex-col gap-7">
             <a className="flex items-center gap-1" href="">
               <RiNotionFill className="text-neutral-900" size={50} />
@@ -63,7 +63,7 @@ const Footer = () => {
             </h3>
           </div>
         </div>
-        <div className="flex flex-col items-end">
+        <div className="flex flex-col items-end w-fit">
           <nav className="fo-wrapper-navigation grid grid-cols-4 justify-items-center gap-32">
             <ul className="flex flex-col gap-1">
               <li className="font-semibold cursor-default">Company</li>
@@ -181,6 +181,7 @@ const Footer = () => {
           </a>
         </div>
       </div>
+      ;
     </section>
   );
 };
