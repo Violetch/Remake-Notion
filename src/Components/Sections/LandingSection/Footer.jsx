@@ -7,9 +7,9 @@ import { RiArrowDropDownLine, RiNotionFill } from "react-icons/ri";
 
 const Footer = () => {
   return (
-    <section className="wr-container flex justify-center items-center w-full h-fit text-neutral-900 px-[80px] py-[110px]">
+    <section className="wr-container relative flex justify-center items-center w-full h-fit text-neutral-900 px-[80px] py-[110px]">
       <div className="h-[1px] w-[98%] bg-neutral-900/20 mt-4 absolute top-0"></div>
-      <div className="fo-wrapper-content flex justify-between w-[1280px]">
+      <div className="fo-wrapper-content flex justify-between gap-8 w-[1280px]">
         <div className="flex flex-col items-center gap-12 w-fit">
           <div className="flex flex-col gap-7">
             <a className="flex items-center gap-1" href="">
@@ -64,7 +64,7 @@ const Footer = () => {
           </div>
         </div>
         <div className="flex flex-col items-end w-fit">
-          <nav className="fo-wrapper-navigation grid grid-cols-4 justify-items-center gap-32">
+          <nav className="fo-wrapper-navigation grid grid-cols-4 gap-32 justify-items-center">
             <ul className="flex flex-col gap-1">
               <li className="font-semibold cursor-default">Company</li>
               <li>
@@ -116,7 +116,7 @@ const Footer = () => {
                 </a>
               </li>
             </ul>
-            <ul className="flex flex-col gap-1">
+            <ul className="flex flex-col gap-1 mr-auto">
               <li className="font-semibold cursor-default">Resources</li>
               <li>
                 <a className="hover:underline decoration-blue-700" href="#">
@@ -154,6 +154,7 @@ const Footer = () => {
                 </a>
               </li>
             </ul>
+
             <ul className="flex flex-col gap-1">
               <li className="font-semibold cursor-default">Notion for</li>
               <li>
@@ -181,7 +182,6 @@ const Footer = () => {
           </a>
         </div>
       </div>
-      ;
     </section>
   );
 };
