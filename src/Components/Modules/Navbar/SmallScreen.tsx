@@ -1,15 +1,14 @@
 import React, { useState } from "react";
 import { FaBars } from "react-icons/fa";
 import { RiNotionFill } from "react-icons/ri";
-import Mapping from "../../../Utils";
 import { NAVBAR_SMALL_LIST } from "../../../Constacts/Navbar";
 import { RxCross2 } from "react-icons/rx";
 
 const SmallScreen = () => {
-  const [activeIndex, setActiveIndex] = useState(null);
-  const [isBars, setIsBars] = useState(false);
+  const [activeIndex, setActiveIndex] = useState<null | number>(null);
+  const [isBars, setIsBars] = useState<boolean>(false);
 
-  const handleIndex = (index) => {
+  const handleIndex = (index: number) => {
     setActiveIndex((prevIndex) => (prevIndex === index ? null : index));
   };
 
@@ -52,46 +51,47 @@ const SmallScreen = () => {
           <div className="h-[1px] w-full bg-neutral-300 mt-3"></div>
           <div className="flex flex-col h-full">
             <div>
-              <Mapping
-                of={NAVBAR_SMALL_LIST}
-                render={(item, index) => (
-                  <div>
-                    <ul className="flex flex-col my-5" key={index}>
-                      <li
-                        className="text-neutral-900 font-bold cursor-pointer"
-                        onClick={() => handleIndex(index)}
-                      >
-                        {item.title}
-                      </li>
-                      {activeIndex === index && (
-                        <a className="mt-4 text-neutral-900" href="">
-                          {item.desc && (
-                            <>
-                              {item.desc.map((itemDesc, indexDesc) => (
-                                <ul
-                                  className="flex items-center mt-2"
-                                  key={indexDesc}
-                                >
+              {NAVBAR_SMALL_LIST.map((item, index) => (
+                <div>
+                  <ul className="flex flex-col my-5" key={index}>
+                    <li
+                      className="text-neutral-900 font-bold cursor-pointer"
+                      onClick={() => handleIndex(index)}
+                    >
+                      {item.title}
+                    </li>
+                    {activeIndex === index && (
+                      <a className="mt-4 text-neutral-900" href="">
+                        {item.desc && (
+                          <>
+                            {item.desc.map((itemDesc, indexDesc) => (
+                              <ul
+                                className="flex items-center mt-2"
+                                key={indexDesc}
+                              >
+                                {"styleIcon" in itemDesc && (
                                   <li className={itemDesc.styleIcon}>
                                     {itemDesc.icon}
                                   </li>
+                                )}
+                                {"styleSubtitle" in itemDesc && (
                                   <li
-                                    className={itemDesc.styleSubTitle}
+                                    className={itemDesc.styleSubtitle}
                                     key={indexDesc}
                                   >
                                     {itemDesc.subTitle}
                                   </li>
-                                </ul>
-                              ))}
-                            </>
-                          )}
-                        </a>
-                      )}
-                    </ul>
-                    <div className="h-[1px] w-full bg-neutral-300"></div>
-                  </div>
-                )}
-              />
+                                )}
+                              </ul>
+                            ))}
+                          </>
+                        )}
+                      </a>
+                    )}
+                  </ul>
+                  <div className="h-[1px] w-full bg-neutral-300"></div>
+                </div>
+              ))}
             </div>
             <div className="flex flex-col justify-center items-center gap-4 mt-auto">
               <div className="h-[1px] w-full bg-neutral-300"></div>

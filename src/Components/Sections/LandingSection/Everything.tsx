@@ -1,3 +1,4 @@
+import React from "react";
 import { CiGlobe } from "react-icons/ci";
 import { GiArtificialIntelligence } from "react-icons/gi";
 import { IoShapesOutline } from "react-icons/io5";
