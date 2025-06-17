@@ -1,4 +1,3 @@
-import React from "react";
 import BigScreen from "./BigScreen";
 import { useMediaQuery } from "react-responsive";
 import SmallScreen from "./SmallScreen";
