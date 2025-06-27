@@ -1,4 +1,3 @@
-import React from "react";
 import { GiArtificialIntelligence } from "react-icons/gi";
 import { HiTemplate } from "react-icons/hi";
 import { LiaProjectDiagramSolid } from "react-icons/lia";
